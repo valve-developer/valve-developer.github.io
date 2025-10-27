@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Combined statistics for d66.json</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22c55e;
+    --border: #1f2937;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #0b1020, #0b1428);
+    color: var(--text);
+  }
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 28px;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 24px 0;
+    font-size: 14px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: rgba(17,24,39,0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    backdrop-filter: blur(6px);
+  }
+  .metric {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(17,24,39,0.5);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  thead th {
+    background: rgba(31,41,55,0.6);
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:hover {
+    background: rgba(31,41,55,0.25);
+  }
+  .note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Combined statistics for d66.json</h1>
+  <p class="subtitle">Combined totals are computed from the stats fields of each entry in this JSON.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="metric">Total Followers</div>
+      <div class="value">16,770</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Following</div>
+      <div class="value">731</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Hearts</div>
+      <div class="value">551,111</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Videos</div>
+      <div class="value">512</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Friends</div>
+      <div class="value">340</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Nickname</th>
+        <th>Followers</th>
+        <th>Following</th>
+        <th>Hearts</th>
+        <th>Videos</th>
+        <th>Friends</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>@d66.apeldoorn</td><td>D66 Apeldoorn</td><td>10</td><td>8</td><td>10</td><td>3</td><td>0</td></tr>
+<tr><td>@d66.dijk.en.waard</td><td>D66 Dijk en Waard</td><td>13</td><td>1</td><td>427</td><td>9</td><td>0</td></tr>
+<tr><td>@d66.ps.groningen</td><td>d66.ps.groningen</td><td>4</td><td>0</td><td>11</td><td>2</td><td>0</td></tr>
+<tr><td>@d66.tilburg</td><td>D66 Tilburg</td><td>103</td><td>98</td><td>1,600</td><td>42</td><td>51</td></tr>
+<tr><td>@d66alkmaar</td><td>D66 Alkmaar</td><td>27</td><td>8</td><td>650</td><td>19</td><td>3</td></tr>
+<tr><td>@d66amsterdam</td><td>d66amsterdam</td><td>29</td><td>2</td><td>8</td><td>1</td><td>0</td></tr>
+<tr><td>@d66breda076</td><td>d66breda</td><td>68</td><td>16</td><td>202</td><td>16</td><td>11</td></tr>
+<tr><td>@d66dewolden</td><td>D66DeWolden</td><td>6</td><td>3</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>@d66haarlem</td><td>D66Haarlem</td><td>27</td><td>14</td><td>59</td><td>9</td><td>7</td></tr>
+<tr><td>@d66hrlm</td><td>d66hrlm</td><td>25</td><td>15</td><td>30</td><td>8</td><td>4</td></tr>
+<tr><td>@d66leiden</td><td>D66 Leiden</td><td>302</td><td>114</td><td>9,473</td><td>35</td><td>88</td></tr>
+<tr><td>@d66rotterdam</td><td>D66Rotterdam</td><td>102</td><td>0</td><td>3,532</td><td>31</td><td>0</td></tr>
+<tr><td>@d66voorschoten</td><td>D66 Voorschoten</td><td>25</td><td>83</td><td>57</td><td>3</td><td>15</td></tr>
+<tr><td>@d66woensdrecht</td><td>d66woensdrecht</td><td>36</td><td>20</td><td>64</td><td>8</td><td>5</td></tr>
+<tr><td>@d66zoetje</td><td>D66 Zoetermeer</td><td>66</td><td>17</td><td>365</td><td>10</td><td>9</td></tr>
+<tr><td>@d66_delft</td><td>D66_Delft</td><td>13</td><td>14</td><td>21</td><td>11</td><td>2</td></tr>
+<tr><td>@democraten66</td><td>democraten66</td><td>14,570</td><td>20</td><td>461,107</td><td>136</td><td>19</td></tr>
+<tr><td>@democraten66.almere</td><td>D66 Almere</td><td>76</td><td>14</td><td>726</td><td>6</td><td>7</td></tr>
+<tr><td>@fractied66zeewolde</td><td>D66 Zeewolde</td><td>68</td><td>96</td><td>243</td><td>30</td><td>33</td></tr>
+<tr><td>@jd.arnhemnijmegen</td><td>jd.arnhemnijmegen</td><td>15</td><td>37</td><td>20</td><td>1</td><td>7</td></tr>
+<tr><td>@jdleidenhaaglanden</td><td>JD Leiden Haaglanden</td><td>70</td><td>11</td><td>447</td><td>7</td><td>8</td></tr>
+<tr><td>@jonge.democraten</td><td>Jonge Democraten</td><td>548</td><td>11</td><td>30,921</td><td>70</td><td>11</td></tr>
+<tr><td>@jongedemocratenamsterdam</td><td>Jonge Democraten Amsterdam</td><td>90</td><td>15</td><td>39</td><td>3</td><td>13</td></tr>
+<tr><td>@jongedemocratenbrabant</td><td>Jonge democraten Brabant</td><td>315</td><td>98</td><td>37,411</td><td>34</td><td>34</td></tr>
+<tr><td>@jongvoorkaag</td><td>Jong voor Kaag 💜👟</td><td>159</td><td>16</td><td>3,673</td><td>14</td><td>11</td></tr>
+<tr><td>@teamd66apeldoorn</td><td>TeamD66Apeldoorn</td><td>3</td><td>0</td><td>13</td><td>2</td><td>0</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">Notes: Missing or non-numeric values are treated as 0. Numbers in the source like "32,439" are parsed correctly.</p>
+</div>
+</body>
+</html>

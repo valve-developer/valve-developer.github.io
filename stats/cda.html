@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Combined statistics for cda.json</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22c55e;
+    --border: #1f2937;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #0b1020, #0b1428);
+    color: var(--text);
+  }
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 28px;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 24px 0;
+    font-size: 14px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: rgba(17,24,39,0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    backdrop-filter: blur(6px);
+  }
+  .metric {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(17,24,39,0.5);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  thead th {
+    background: rgba(31,41,55,0.6);
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:hover {
+    background: rgba(31,41,55,0.25);
+  }
+  .note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Combined statistics for cda.json</h1>
+  <p class="subtitle">Combined totals are computed from the stats fields of each entry in this JSON.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="metric">Total Followers</div>
+      <div class="value">3,533</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Following</div>
+      <div class="value">430</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Hearts</div>
+      <div class="value">64,217</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Videos</div>
+      <div class="value">272</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Friends</div>
+      <div class="value">159</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Nickname</th>
+        <th>Followers</th>
+        <th>Following</th>
+        <th>Hearts</th>
+        <th>Videos</th>
+        <th>Friends</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>@brabant_cdja</td><td>Brabant_CDJA</td><td>14</td><td>4</td><td>12</td><td>4</td><td>2</td></tr>
+<tr><td>@cda.denhaag</td><td>CDA Den Haag</td><td>7</td><td>2</td><td>32</td><td>5</td><td>0</td></tr>
+<tr><td>@cda.europa</td><td>CDA Europa</td><td>266</td><td>17</td><td>2,244</td><td>81</td><td>14</td></tr>
+<tr><td>@cda.hardenberg</td><td>CDA Hardenberg</td><td>40</td><td>30</td><td>19</td><td>1</td><td>12</td></tr>
+<tr><td>@cda.lansingerland</td><td>CDA Lansingerland</td><td>31</td><td>19</td><td>49</td><td>3</td><td>3</td></tr>
+<tr><td>@cda.ridderkerk</td><td>CDA Ridderkerk</td><td>28</td><td>18</td><td>66</td><td>7</td><td>5</td></tr>
+<tr><td>@cdabergeijk</td><td>CDA Bergeijk</td><td>68</td><td>44</td><td>293</td><td>9</td><td>21</td></tr>
+<tr><td>@cdabrabant</td><td>CDA Brabant</td><td>73</td><td>30</td><td>121</td><td>6</td><td>15</td></tr>
+<tr><td>@cdadinkelland</td><td>cdadinkelland</td><td>33</td><td>38</td><td>76</td><td>5</td><td>9</td></tr>
+<tr><td>@cdaeindhoven</td><td>CDA040</td><td>2</td><td>0</td><td>3</td><td>1</td><td>0</td></tr>
+<tr><td>@cdahelmond</td><td>cdahelmond</td><td>27</td><td>1</td><td>38</td><td>3</td><td>0</td></tr>
+<tr><td>@cdamaastricht</td><td>cdamaastricht</td><td>25</td><td>17</td><td>27</td><td>1</td><td>7</td></tr>
+<tr><td>@cdaroerdalen</td><td>cdaroerdalen</td><td>71</td><td>54</td><td>193</td><td>10</td><td>18</td></tr>
+<tr><td>@cdavandaag</td><td>CDA</td><td>1,212</td><td>8</td><td>10,315</td><td>50</td><td>6</td></tr>
+<tr><td>@cdawestland</td><td>CDAWestland</td><td>44</td><td>49</td><td>23</td><td>2</td><td>10</td></tr>
+<tr><td>@cdazeeland</td><td>CDA Zeelnd</td><td>36</td><td>46</td><td>17</td><td>7</td><td>8</td></tr>
+<tr><td>@cdja.online</td><td>CDJA Online</td><td>132</td><td>28</td><td>553</td><td>10</td><td>17</td></tr>
+<tr><td>@cdjafryslan</td><td>CDJA FRYSLÂN</td><td>1</td><td>0</td><td>12</td><td>4</td><td>0</td></tr>
+<tr><td>@cdjaonline</td><td>CDJA - CDA jongeren</td><td>195</td><td>16</td><td>1,278</td><td>23</td><td>6</td></tr>
+<tr><td>@krachtigedorpen</td><td>CDA Zuidplas</td><td>27</td><td>3</td><td>5</td><td>1</td><td>1</td></tr>
+<tr><td>@teamhenri2025</td><td>TeamHenri2025</td><td>1,201</td><td>6</td><td>48,841</td><td>39</td><td>5</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">Notes: Missing or non-numeric values are treated as 0. Numbers in the source like "32,439" are parsed correctly.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Combined statistics for glpvda.json</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22c55e;
+    --border: #1f2937;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #0b1020, #0b1428);
+    color: var(--text);
+  }
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 28px;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 24px 0;
+    font-size: 14px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: rgba(17,24,39,0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    backdrop-filter: blur(6px);
+  }
+  .metric {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(17,24,39,0.5);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  thead th {
+    background: rgba(31,41,55,0.6);
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:hover {
+    background: rgba(31,41,55,0.25);
+  }
+  .note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Combined statistics for glpvda.json</h1>
+  <p class="subtitle">Combined totals are computed from the stats fields of each entry in this JSON.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="metric">Total Followers</div>
+      <div class="value">72,331</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Following</div>
+      <div class="value">3,145</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Hearts</div>
+      <div class="value">1,781,111</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Videos</div>
+      <div class="value">1,510</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Friends</div>
+      <div class="value">1,001</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Nickname</th>
+        <th>Followers</th>
+        <th>Following</th>
+        <th>Hearts</th>
+        <th>Videos</th>
+        <th>Friends</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>@dwarsgroningen</td><td>dwarsgroningen</td><td>70</td><td>12</td><td>281</td><td>9</td><td>8</td></tr>
+<tr><td>@dwarsjs</td><td>DWARS x Jonge Socialisten</td><td>803</td><td>28</td><td>2,615</td><td>12</td><td>24</td></tr>
+<tr><td>@dwarslimburg</td><td>DWARSLimburg</td><td>27</td><td>10</td><td>43</td><td>3</td><td>7</td></tr>
+<tr><td>@dwarsutrecht</td><td>DwarsUtrecht</td><td>6</td><td>1</td><td>21</td><td>12</td><td>0</td></tr>
+<tr><td>@glpvda.amstelveen</td><td>GroenLinks-PvdA Amstelveen</td><td>70</td><td>3</td><td>193</td><td>10</td><td>2</td></tr>
+<tr><td>@glpvda.oosterhout</td><td>GroenLinks-PvdA Oosterhout</td><td>62</td><td>4</td><td>6</td><td>1</td><td>3</td></tr>
+<tr><td>@glpvda072</td><td>GroenlinksPvdA_Alkmaar</td><td>166</td><td>177</td><td>759</td><td>30</td><td>56</td></tr>
+<tr><td>@groenlinks.almere</td><td>GroenLinks Almere</td><td>19</td><td>0</td><td>540</td><td>2</td><td>0</td></tr>
+<tr><td>@groenlinks.noordh</td><td>GroenLinks Noord-Holland</td><td>221</td><td>71</td><td>1,309</td><td>39</td><td>23</td></tr>
+<tr><td>@groenlinks.zaanstad</td><td>GroenLinks.Zaanstad</td><td>16</td><td>5</td><td>89</td><td>2</td><td>1</td></tr>
+<tr><td>@groenlinksamsterdam</td><td>GroenLinks Amsterdam</td><td>784</td><td>14</td><td>11,175</td><td>21</td><td>11</td></tr>
+<tr><td>@groenlinksapeldoorn</td><td>groenlinksapeldoorn</td><td>127</td><td>17</td><td>798</td><td>54</td><td>11</td></tr>
+<tr><td>@groenlinksdenbosch</td><td>groenlinksdenbosch</td><td>56</td><td>47</td><td>291</td><td>8</td><td>21</td></tr>
+<tr><td>@groenlinksinijsselstein</td><td>GroenLinks IJsselstein</td><td>89</td><td>291</td><td>228</td><td>17</td><td>48</td></tr>
+<tr><td>@groenlinkslimburg</td><td>GroenLinks Limburg</td><td>200</td><td>95</td><td>1,726</td><td>35</td><td>44</td></tr>
+<tr><td>@groenlinkslingewaard</td><td>GroenLinks Lingewaard</td><td>77</td><td>69</td><td>540</td><td>80</td><td>18</td></tr>
+<tr><td>@groenlinksnijmegen</td><td>GroenLinksNijmegen</td><td>214</td><td>43</td><td>1,500</td><td>41</td><td>18</td></tr>
+<tr><td>@groenlinksnop</td><td>GroenLinksnop</td><td>48</td><td>21</td><td>81</td><td>8</td><td>9</td></tr>
+<tr><td>@groenlinksprovgroningen</td><td>GroenLinksProvGroningen</td><td>69</td><td>33</td><td>117</td><td>5</td><td>19</td></tr>
+<tr><td>@groenlinkspvda</td><td>groenlinkspvda</td><td>59,799</td><td>104</td><td>1,674,583</td><td>518</td><td>34</td></tr>
+<tr><td>@groenlinkspvdaberkelland</td><td>groenlinkspvdaberkelland</td><td>4</td><td>0</td><td>17</td><td>3</td><td>0</td></tr>
+<tr><td>@groenlinkspvdaflevoland</td><td>GroenLinksPvdA Flevoland</td><td>1,282</td><td>18</td><td>42,929</td><td>28</td><td>10</td></tr>
+<tr><td>@groenlinkspvdazoeterneer</td><td>groenlinkspvdazoeterneer</td><td>100</td><td>46</td><td>267</td><td>6</td><td>11</td></tr>
+<tr><td>@groenlinkspvdazut</td><td>GroenLinksPvdAZutphen</td><td>10</td><td>11</td><td>43</td><td>2</td><td>0</td></tr>
+<tr><td>@groenlinkspvda_hw</td><td>GroenLinksPvdA_HW</td><td>2</td><td>1</td><td>2</td><td>1</td><td>0</td></tr>
+<tr><td>@groenlinkstynaarlo</td><td>GroenLinks Tynaarlo</td><td>564</td><td>853</td><td>748</td><td>80</td><td>56</td></tr>
+<tr><td>@groenlinkswestland</td><td>GroenlinksWestland</td><td>80</td><td>4</td><td>308</td><td>6</td><td>1</td></tr>
+<tr><td>@groenlinks_capelle</td><td>GroenLinks Capelle</td><td>47</td><td>3</td><td>162</td><td>9</td><td>2</td></tr>
+<tr><td>@groenlinks_delft</td><td>GroenLinks_Delft</td><td>61</td><td>11</td><td>225</td><td>9</td><td>6</td></tr>
+<tr><td>@groenlinks_pvda_dalfsen</td><td>groenlinks_pvda_dalfsen</td><td>6</td><td>1</td><td>19</td><td>5</td><td>1</td></tr>
+<tr><td>@groenlinks_stadskanaal</td><td>GroenLinks_Stadskanaal</td><td>91</td><td>33</td><td>395</td><td>12</td><td>15</td></tr>
+<tr><td>@groenlinks_veendam</td><td>GroenLinks_Veendam</td><td>41</td><td>36</td><td>59</td><td>9</td><td>10</td></tr>
+<tr><td>@groenlinks_zaanstad</td><td>GroenLinksZaanstad</td><td>31</td><td>9</td><td>91</td><td>19</td><td>5</td></tr>
+<tr><td>@jeunessoc33</td><td>Jeunes Socialistes Gironde</td><td>234</td><td>67</td><td>1,918</td><td>15</td><td>35</td></tr>
+<tr><td>@jongsocialisten_tongeren</td><td>JongSocialisten Tongeren</td><td>30</td><td>7</td><td>99</td><td>1</td><td>4</td></tr>
+<tr><td>@jsbelgie</td><td>Jongsocialisten</td><td>421</td><td>9</td><td>1,034</td><td>9</td><td>8</td></tr>
+<tr><td>@jsindepvda</td><td>Jonge Socialisten in de PvdA</td><td>221</td><td>3</td><td>439</td><td>5</td><td>0</td></tr>
+<tr><td>@js_gent</td><td>Jongsocialisten Gent</td><td>92</td><td>7</td><td>41</td><td>1</td><td>6</td></tr>
+<tr><td>@lesjeunessoc</td><td>Les Jeunes Socialistes</td><td>1,302</td><td>99</td><td>7,568</td><td>34</td><td>79</td></tr>
+<tr><td>@pvda.de.bilt</td><td>PvdA De Bilt</td><td>63</td><td>43</td><td>58</td><td>5</td><td>10</td></tr>
+<tr><td>@pvda.tongeren</td><td>PVDA Tongeren</td><td>44</td><td>69</td><td>5</td><td>1</td><td>21</td></tr>
+<tr><td>@pvda020</td><td>PvdA Amsterdam</td><td>338</td><td>116</td><td>6,289</td><td>16</td><td>21</td></tr>
+<tr><td>@pvda5hl</td><td>PvdA Vijfheerenlanden🌹</td><td>17</td><td>3</td><td>182</td><td>6</td><td>2</td></tr>
+<tr><td>@pvdabelgie</td><td>pvdabelgie</td><td>2,625</td><td>11</td><td>7,405</td><td>15</td><td>9</td></tr>
+<tr><td>@pvdagroenlinkszeeland</td><td>pvdagroenlinkszeeland</td><td>39</td><td>21</td><td>47</td><td>4</td><td>1</td></tr>
+<tr><td>@pvdagroningen</td><td>PvdAGroningen</td><td>321</td><td>44</td><td>2,909</td><td>51</td><td>25</td></tr>
+<tr><td>@pvdalimburg</td><td>pvdalimburg</td><td>157</td><td>23</td><td>838</td><td>30</td><td>13</td></tr>
+<tr><td>@pvdamiddengroningen</td><td>PvdA Midden-Groningen</td><td>134</td><td>235</td><td>89</td><td>13</td><td>93</td></tr>
+<tr><td>@pvdaoudeijsselstreek</td><td>PvdAOudeIJsselstreek</td><td>168</td><td>132</td><td>1,067</td><td>28</td><td>106</td></tr>
+<tr><td>@pvdasmallingerland</td><td>PvdA Smallingerland</td><td>89</td><td>25</td><td>231</td><td>15</td><td>10</td></tr>
+<tr><td>@pvdautrecht</td><td>PvdA Utrecht</td><td>405</td><td>46</td><td>5,251</td><td>61</td><td>24</td></tr>
+<tr><td>@pvdavenlo</td><td>PvdA Venlo</td><td>21</td><td>12</td><td>67</td><td>7</td><td>3</td></tr>
+<tr><td>@pvdawestland</td><td>pvdawestland 🌹</td><td>169</td><td>41</td><td>2,595</td><td>23</td><td>19</td></tr>
+<tr><td>@pvda_amersfoort</td><td>PvdA033</td><td>49</td><td>12</td><td>26</td><td>10</td><td>9</td></tr>
+<tr><td>@pvda_apeldoorn</td><td>PvdA Apeldoorn 🌹</td><td>150</td><td>49</td><td>793</td><td>64</td><td>29</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">Notes: Missing or non-numeric values are treated as 0. Numbers in the source like "32,439" are parsed correctly.</p>
+</div>
+</body>
+</html>

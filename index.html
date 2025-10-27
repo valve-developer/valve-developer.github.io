@@ -1,1 +1,367 @@
-<div class="flourish-embed flourish-parliament" data-src="visualisation/25856895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/25856895/thumbnail" width="100%" alt="parliament visualization" /></noscript></div>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kijkcijfers en Statistiek Politieke Partijen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #808080;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin: 60px 0 50px 0;
+            font-size: 2.5em;
+        }
+
+        .main-image-section {
+            margin: 50px 0;
+        }
+
+        .main-image-section a img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border: 3px solid #ffffff;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-section a img:hover {
+            transform: scale(1.05);
+        }
+
+        .three-images-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .three-images-section a {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .three-images-section a img {
+            width: 100%;
+            height: auto;
+            border: 3px solid #ffffff;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .three-images-section a img:hover {
+            transform: scale(1.05);
+        }
+
+        .party-logos-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 60px 0;
+        }
+
+        .party-logo {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .party-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .party-logo:hover img {
+            transform: scale(1.15);
+        }
+
+        .party-logo .tooltip {
+            visibility: hidden;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            white-space: nowrap;
+            z-index: 1;
+            margin-bottom: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .party-logo .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+        }
+
+        .party-logo:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .tooltip a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .party-logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kijkcijfers en Statistiek Politieke Partijen</h1>
+
+        <!-- Main Image Section -->
+        <div class="main-image-section">
+            <a href="grafiek.html">
+                <img src="grafiek.png" alt="Grafiek">
+            </a>
+        </div>
+
+        <!-- Three Images Section -->
+        <div class="three-images-section">
+            <a href="zetelverschil-2023-data.html">
+                <img src="zetelverschil-2023-data.png" alt="Zetelverschil 2023 Data">
+            </a>
+            <a href="zetelverschil-2023-views.html">
+                <img src="zetelverschil-2023-views.png" alt="Zetelverschil 2023 Views">
+            </a>
+            <a href="zetelverschil-data-views.html">
+                <img src="zetelverschil-data-views.png" alt="Zetelverschil Data Views">
+            </a>
+        </div>
+
+        <!-- Party Logos Section -->
+        <div class="party-logos-section">
+            <div class="party-logo">
+                <img src="logo/denk.jpg" alt="DENK">
+                <div class="tooltip">
+                    <a href="data/denk.html">Statistiek</a> | 
+                    <a href="views/denk.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/bij1.jpg" alt="BIJ1">
+                <div class="tooltip">
+                    <a href="data/bij1.html">Statistiek</a> | 
+                    <a href="views/bij1.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/glpvda.jpg" alt="GL-PvdA">
+                <div class="tooltip">
+                    <a href="data/glpvda.html">Statistiek</a> | 
+                    <a href="views/glpvda.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/sp.jpg" alt="SP">
+                <div class="tooltip">
+                    <a href="data/sp.html">Statistiek</a> | 
+                    <a href="views/sp.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/vredevoordieren.jpg" alt="Vrede voor Dieren">
+                <div class="tooltip">
+                    <a href="data/vredevoordieren.html">Statistiek</a> | 
+                    <a href="views/vredevoordieren.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/pvdd.jpg" alt="PvdD">
+                <div class="tooltip">
+                    <a href="data/pvdd.html">Statistiek</a> | 
+                    <a href="views/pvdd.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/volt.jpg" alt="Volt">
+                <div class="tooltip">
+                    <a href="data/volt.html">Statistiek</a> | 
+                    <a href="views/volt.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/pp.jpg" alt="PP">
+                <div class="tooltip">
+                    <a href="data/pp.html">Statistiek</a> | 
+                    <a href="views/pp.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/d66.jpg" alt="D66">
+                <div class="tooltip">
+                    <a href="data/d66.html">Statistiek</a> | 
+                    <a href="views/d66.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/nlplan.jpg" alt="NL Plan">
+                <div class="tooltip">
+                    <a href="data/nlplan.html">Statistiek</a> | 
+                    <a href="views/nlplan.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/cda.jpg" alt="CDA">
+                <div class="tooltip">
+                    <a href="data/cda.html">Statistiek</a> | 
+                    <a href="views/cda.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/nsc.jpg" alt="NSC">
+                <div class="tooltip">
+                    <a href="data/nsc.html">Statistiek</a> | 
+                    <a href="views/nsc.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/cu.jpg" alt="CU">
+                <div class="tooltip">
+                    <a href="data/cu.html">Statistiek</a> | 
+                    <a href="views/cu.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/bbb.jpg" alt="BBB">
+                <div class="tooltip">
+                    <a href="data/bbb.html">Statistiek</a> | 
+                    <a href="views/bbb.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/vvd.jpg" alt="VVD">
+                <div class="tooltip">
+                    <a href="data/vvd.html">Statistiek</a> | 
+                    <a href="views/vvd.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/lp.jpg" alt="LP">
+                <div class="tooltip">
+                    <a href="data/lp.html">Statistiek</a> | 
+                    <a href="views/lp.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/ja21.jpg" alt="JA21">
+                <div class="tooltip">
+                    <a href="data/ja21.html">Statistiek</a> | 
+                    <a href="views/ja21.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/bvnl.jpg" alt="BVNL">
+                <div class="tooltip">
+                    <a href="data/bvnl.html">Statistiek</a> | 
+                    <a href="views/bvnl.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/50plus.jpg" alt="50PLUS">
+                <div class="tooltip">
+                    <a href="data/50plus.html">Statistiek</a> | 
+                    <a href="views/50plus.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/pvv.jpg" alt="PVV">
+                <div class="tooltip">
+                    <a href="data/pvv.html">Statistiek</a> | 
+                    <a href="views/pvv.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/sgp.jpg" alt="SGP">
+                <div class="tooltip">
+                    <a href="data/sgp.html">Statistiek</a> | 
+                    <a href="views/sgp.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/fvd.jpg" alt="FvD">
+                <div class="tooltip">
+                    <a href="data/fvd.html">Statistiek</a> | 
+                    <a href="views/fvd.html">Kijkcijfers</a>
+                </div>
+            </div>
+
+            <div class="party-logo">
+                <img src="logo/delinie.jpg" alt="De Linie">
+                <div class="tooltip">
+                    <a href="data/delinie.html">Statistiek</a> | 
+                    <a href="views/delinie.html">Kijkcijfers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

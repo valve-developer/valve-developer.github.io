@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>Partijen: Weergaven, Datahoeveelheid en Aantal Accounts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 20px; color: #111; }
+    h1 { margin-bottom: 0.2rem; }
+    p { margin-top: 0.2rem; color: #555; }
+    .wrap { max-width: 1200px; }
+    #chartWrap { position: relative; height: 560px; }
+    .legend-note { font-size: 0.95rem; color: #444; margin: 12px 0 0; }
+    .source { font-size: 0.85rem; color: #666; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Weergaven, datahoeveelheid en accounts per partij</h1>
+    <p>Deze grafiek toont per partij twee overlappende staafdiagrammen (weergaven en datahoeveelheid) met een lijnoverlay voor het aantal accounts.</p>
+
+    <div id="chartWrap">
+      <canvas id="partyChart" aria-label="Grafiek per partij"></canvas>
+    </div>
+
+    <p class="legend-note">
+      Opmerking: datahoeveelheid is omgerekend naar GB; MB-waarden zijn geconverteerd naar GB voor vergelijkbaarheid.
+    </p>
+
+    <p class="source">
+      Bron: aangeleverde bestanden totals.txt en Party-Seats-DataSize-Percentage.csv.
+    </p>
+  </div>
+
+  <script>
+    // Ruwe data uit de bijlagen
+    // totals.txt -> weergaven en accounts
+    const totals = {
+      denk:  { views: 43583839, accounts: 10 },
+      bij1:  { views: 2596431,  accounts: 9 },
+      glpvda:{ views: 21662180, accounts: 55 },
+      sp:    { views: 11035505, accounts: 27 },
+      vredevoordieren:{ views: 7920, accounts: 1 },
+      pvdd:  { views: 3050603,  accounts: 4 },
+      volt:  { views: 12614815, accounts: 70 },
+      pp:    { views: 1709957,  accounts: 12 },
+      d66:   { views: 5784544,  accounts: 26 },
+      nlplan:{ views: 14875169, accounts: 1 },
+      cda:   { views: 1205990,  accounts: 21 },
+      nsc:   { views: 815692,   accounts: 3 },
+      cu:    { views: 312879,   accounts: 5 },
+      bbb:   { views: 42511568, accounts: 8 },
+      vvd:   { views: 821513,   accounts: 17 },
+      lp:    { views: 694007,   accounts: 1 },
+      ja21:  { views: 19536875, accounts: 6 },
+      bvnl:  { views: 2165386,  accounts: 5 },
+      "50plus":{ views: 29296,   accounts: 1 },
+      pvv:   { views: 4215,     accounts: 4 },
+      sgp:   { views: 0,        accounts: 0 },
+      fvd:   { views: 51209294, accounts: 14 },
+	  delinie:{ views: 0, accounts:1 }
+    };
+
+    // Party-Seats-DataSize-Percentage.csv -> datahoeveelheid
+    // Waarden in GB, MB geconverteerd naar GB
+    const dataSizeGb = {
+      denk:  5.4,
+      bij1:  1.1,
+      glpvda:5.1,
+      sp:    4.7,
+      vredevoordieren: 115.2/1024, // MB -> GB
+      pvdd:  862.9/1024,
+      volt:  12.5,
+      pp:    1.4,
+      d66:   1.2,
+      nlplan:516.7/1024,
+      cda:   824.4/1024,
+      nsc:   338.9/1024,
+      cu:    474.2/1024,
+      bbb:   2.7,
+      vvd:   431.9/1024,
+      lp:    536.3/1024,
+      ja21:  2.1,
+      bvnl:  680.4/1024,
+      "50plus": 61.6/1024,
+      pvv:   13.7/1024,
+      sgp:   0.0,
+      fvd:   6.1,
+	  delinie: 0.0
+    };
+
+    // Maak één uniforme, geordende lijst van partijen (geordend op weergaven, aflopend)
+    const parties = Object.keys(totals).sort((a, b) => totals[b].views - totals[a].views);
+
+    // Bouw datasets
+    const labels = parties.map(key => key.toUpperCase());
+    const views = parties.map(key => totals[key].views);
+    const accounts = parties.map(key => totals[key].accounts);
+    const sizesGb = parties.map(key => (dataSizeGb[key] ?? 0));
+
+    // Hulpfunctie: nette formattering
+    const fmtInt = (n) => n.toLocaleString('nl-NL');
+    const fmtGb = (n) => n.toLocaleString('nl-NL', { maximumFractionDigits: 2 });
+
+    // Schalen: gebruik dubbele y-assen voor eenheden (weergaven vs GB vs accounts)
+    // - yWeergaven: links
+    // - yData: rechts
+    // - yAccounts: rechts (tweede schaal), gestapeld op dezelfde zijde maar met eigen min/max
+    // Visueel: overlap bars met verschillende breedtes en transparantie
+    const ctx = document.getElementById('partyChart');
+
+    // Bepaal dynamische maxima voor prettige as-indeling
+    const maxViews = Math.max(...views);
+    const maxSize = Math.max(...sizesGb);
+    const maxAccounts = Math.max(...accounts);
+
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          {
+            type: 'bar',
+            label: 'Weergaven',
+            data: views,
+            yAxisID: 'yWeergaven',
+            backgroundColor: 'rgba(33, 150, 243, 0.45)', // blauw
+            borderColor: 'rgba(33, 150, 243, 0.9)',
+            borderWidth: 1,
+            barPercentage: 0.7,
+            categoryPercentage: 0.8
+          },
+          {
+            type: 'bar',
+            label: 'Datahoeveelheid (GB)',
+            data: sizesGb,
+            yAxisID: 'yData',
+            backgroundColor: 'rgba(255, 152, 0, 0.45)', // oranje
+            borderColor: 'rgba(255, 152, 0, 0.9)',
+            borderWidth: 1,
+            barPercentage: 0.5,
+            categoryPercentage: 0.8
+          },
+          {
+            type: 'line',
+            label: 'Aantal accounts',
+            data: accounts,
+            yAxisID: 'yAccounts',
+            borderColor: 'rgba(76, 175, 80, 0.95)', // groen
+            backgroundColor: 'rgba(76, 175, 80, 0.25)',
+            tension: 0.25,
+            borderWidth: 2,
+            pointRadius: 3,
+            pointHoverRadius: 5
+          }
+        ]
+      },
+      options: {
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            callbacks: {
+              label: function(ctx) {
+                const dsLabel = ctx.dataset.label || '';
+                const val = ctx.parsed.y;
+                if (dsLabel.includes('Weergaven')) {
+                  return dsLabel + ': ' + fmtInt(val);
+                }
+                if (dsLabel.includes('Datahoeveelheid')) {
+                  return dsLabel + ': ' + fmtGb(val) + ' GB';
+                }
+                if (dsLabel.includes('accounts')) {
+                  return dsLabel + ': ' + fmtInt(val);
+                }
+                return dsLabel + ': ' + val;
+              }
+            }
+          },
+          title: {
+            display: true,
+            text: 'Vergelijking per partij: weergaven, data (GB) en accounts'
+          }
+        },
+        scales: {
+          x: {
+            stacked: false,
+            ticks: {
+              autoSkip: false,
+              maxRotation: 45,
+              minRotation: 0
+            }
+          },
+          yWeergaven: {
+            position: 'left',
+            title: { display: true, text: 'Weergaven' },
+            suggestedMin: 0,
+            suggestedMax: Math.ceil(maxViews / 10_000_000) * 10_000_000,
+            grid: { drawOnChartArea: true }
+          },
+          yData: {
+            position: 'right',
+            title: { display: true, text: 'Data (GB)' },
+            suggestedMin: 0,
+            suggestedMax: Math.max(2, Math.ceil(maxSize)),
+            grid: { drawOnChartArea: false }
+          },
+          yAccounts: {
+            position: 'right',
+            title: { display: true, text: 'Accounts' },
+            suggestedMin: 0,
+            suggestedMax: Math.max(5, Math.ceil(maxAccounts)),
+            grid: { drawOnChartArea: false },
+            // Zorg dat de line een eigen schaal heeft (naast yData)
+            // door verschillend id te gebruiken en beide rechts te plaatsen
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
