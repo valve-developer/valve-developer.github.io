@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Combined statistics for sp.json</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22c55e;
+    --border: #1f2937;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #0b1020, #0b1428);
+    color: var(--text);
+  }
+  .container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 28px;
+    margin: 0 0 18px 0;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 24px 0;
+    font-size: 14px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: rgba(17,24,39,0.6);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    backdrop-filter: blur(6px);
+  }
+  .metric {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(17,24,39,0.5);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  thead th {
+    background: rgba(31,41,55,0.6);
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:hover {
+    background: rgba(31,41,55,0.25);
+  }
+  .note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Combined statistics for sp.json</h1>
+  <p class="subtitle">Combined totals are computed from the stats fields of each entry in this JSON.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="metric">Total Followers</div>
+      <div class="value">29,469</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Following</div>
+      <div class="value">13,432</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Hearts</div>
+      <div class="value">433,077</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Videos</div>
+      <div class="value">1,362</div>
+    </div>
+    <div class="card">
+      <div class="metric">Total Friends</div>
+      <div class="value">11,327</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Nickname</th>
+        <th>Followers</th>
+        <th>Following</th>
+        <th>Hearts</th>
+        <th>Videos</th>
+        <th>Friends</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td>@socialistischepartij</td><td>SocialistischePartij</td><td>8,377</td><td>17</td><td>147,622</td><td>167</td><td>17</td></tr>
+<tr><td>@sp..landsmeer</td><td>SP. Landsmeer</td><td>111</td><td>370</td><td>321</td><td>32</td><td>89</td></tr>
+<tr><td>@sp.den.bosch</td><td>SP Den Bosch</td><td>176</td><td>21</td><td>1,114</td><td>26</td><td>11</td></tr>
+<tr><td>@sp.denhelder.huis</td><td>SP DENHELDER HUISDUINEN JDORP</td><td>39</td><td>28</td><td>54</td><td>10</td><td>25</td></tr>
+<tr><td>@sp.gouda</td><td>SP Gouda</td><td>80</td><td>64</td><td>503</td><td>9</td><td>22</td></tr>
+<tr><td>@sp.jongeren.frysl</td><td>SP Jongeren Fryslân</td><td>60</td><td>5</td><td>4</td><td>1</td><td>1</td></tr>
+<tr><td>@sp.jongeren.nijme</td><td>SP Jongeren Nijmegen</td><td>157</td><td>4</td><td>418</td><td>14</td><td>1</td></tr>
+<tr><td>@sp.lelystad</td><td>SP Lelystad</td><td>131</td><td>202</td><td>1,194</td><td>106</td><td>85</td></tr>
+<tr><td>@spbergenopzoom</td><td>SPBergenopZoom</td><td>63</td><td>64</td><td>4</td><td>1</td><td>25</td></tr>
+<tr><td>@spbreda</td><td>SPBreda</td><td>8</td><td>0</td><td>4</td><td>3</td><td>0</td></tr>
+<tr><td>@spdelft</td><td>SP Delft</td><td>16,019</td><td>9,637</td><td>242,003</td><td>620</td><td>9,161</td></tr>
+<tr><td>@spdeventer</td><td>SPDeventer</td><td>0</td><td>2</td><td>4</td><td>1</td><td>0</td></tr>
+<tr><td>@spdoetinchem</td><td>spdoetinchem</td><td>226</td><td>17</td><td>2,220</td><td>103</td><td>16</td></tr>
+<tr><td>@spgroningen</td><td>hans_dewaard</td><td>32</td><td>13</td><td>445</td><td>15</td><td>8</td></tr>
+<tr><td>@sphaarlem</td><td>SP Haarlem</td><td>196</td><td>706</td><td>475</td><td>19</td><td>33</td></tr>
+<tr><td>@spjongerenhaaglanden</td><td>SP Jongeren Haaglanden</td><td>76</td><td>0</td><td>251</td><td>5</td><td>0</td></tr>
+<tr><td>@spjongerenrotterdam</td><td>spjongerenrotterdam</td><td>225</td><td>41</td><td>6,167</td><td>17</td><td>30</td></tr>
+<tr><td>@spmaastricht</td><td>Maastrichtse SP</td><td>6</td><td>0</td><td>15</td><td>1</td><td>0</td></tr>
+<tr><td>@spnissewaard</td><td>SPNissewaard</td><td>69</td><td>11</td><td>1,622</td><td>18</td><td>7</td></tr>
+<tr><td>@sprotterdam</td><td>SP Rotterdam</td><td>32</td><td>0</td><td>3</td><td>1</td><td>0</td></tr>
+<tr><td>@spterneuzen</td><td>SP Terneuzen</td><td>165</td><td>0</td><td>330</td><td>67</td><td>0</td></tr>
+<tr><td>@spvenray</td><td>SP Venray 🍅</td><td>74</td><td>27</td><td>441</td><td>3</td><td>7</td></tr>
+<tr><td>@spzeeland</td><td>SP Zeeland</td><td>30</td><td>3</td><td>4,219</td><td>13</td><td>1</td></tr>
+<tr><td>@sp_jongeren</td><td>SP Jongeren</td><td>612</td><td>12</td><td>19,229</td><td>68</td><td>9</td></tr>
+<tr><td>@sp_jongeren_amsterdam</td><td>SP Jongeren Amsterdam</td><td>65</td><td>4</td><td>33</td><td>6</td><td>0</td></tr>
+<tr><td>@sp_utrecht</td><td>SP Utrecht</td><td>1,095</td><td>1,064</td><td>4,114</td><td>23</td><td>733</td></tr>
+<tr><td>@tomatenvanamstelveen</td><td>sp.amstelveen</td><td>1,345</td><td>1,120</td><td>268</td><td>13</td><td>1,046</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">Notes: Missing or non-numeric values are treated as 0. Numbers in the source like "32,439" are parsed correctly.</p>
+</div>
+</body>
+</html>
